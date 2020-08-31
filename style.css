@@ -1,0 +1,92 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: #acf2eb;
+  --color2: #150940;
+  --color3: #f2e74b;
+  --color4: #f2c849;
+  --color5: #f2b749;
+  --color6: #f29849;
+}
+
+body {
+  background: url("./img/bck3.jpg") no-repeat center / cover;
+  width: 100%;
+  height: 100vw;
+  margin: 0;
+  font-family: arial;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 2em 0 2em 0;
+  box-shadow: 13px 15px 38px -28px rgba(0, 0, 0, 0.75);
+}
+
+.main-nav {
+  background: var(--color2);
+  border-radius: 2em 0 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-nav__item {
+  text-decoration: none;
+  padding: 1.2em;
+  color: white;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.main-nav__item:hover {
+  background: var(--color1);
+  color: var(--color2);
+  font-weight: bold;
+}
+
+header > h1 {
+  margin: 1.2em auto;
+}
+
+.title {
+  text-align: center;
+  font-family: "Bilbo Swash Caps", cursive;
+  font-size: 2em;
+}
+
+.contact {
+  background: var(--color2);
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 0 0 2em 0;
+}
+
+.contact > h2 {
+  letter-spacing: 0.1em;
+  color: var(--color1);
+  padding-bottom: 0.9em;
+  border-bottom: 1px solid var(--color1);
+}
+
+.contact > p {
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact__item {
+  color: var(--color1);
+}
