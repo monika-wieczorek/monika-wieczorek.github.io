@@ -26,7 +26,7 @@ body {
 
 .container {
   max-width: 1020px;
-  margin: 0 auto;
+  margin: 3em auto;
   background: #fff;
   border-radius: 2em 0 2em 0;
   box-shadow: 13px 15px 38px -28px rgba(0, 0, 0, 0.75);
@@ -65,7 +65,7 @@ header > h1 {
 
 .contact {
   background: var(--color2);
-  padding-top: 20px;
+  padding-top: 0.5em;
   text-align: center;
   border-radius: 0 0 2em 0;
 }
@@ -80,13 +80,23 @@ header > h1 {
 .contact > p {
   letter-spacing: 0.1em;
   color: #fff;
+  padding-bottom: 5px;
 }
 
 .contact-container {
   display: flex;
   justify-content: space-around;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .contact__item {
   color: var(--color1);
+}
+
+.contact-container__item {
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--color1);
+  font-size: 2.5em;
 }
