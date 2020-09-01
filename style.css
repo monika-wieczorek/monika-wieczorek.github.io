@@ -7,16 +7,16 @@ html {
 }
 
 :root {
-  --color1: #acf2eb;
-  --color2: #150940;
-  --color3: #f2e74b;
-  --color4: #f2c849;
-  --color5: #f2b749;
-  --color6: #f29849;
+  --color1: #4c3f59;
+  --color2: #f2e2c4;
+  --color3: #f2955e;
+  --color4: #f26849;
+  --color5: #bf5349;
+  --extraFont: "Bilbo Swash Caps", cursive;
 }
 
 body {
-  background: url("./img/bck3.jpg") no-repeat center / cover;
+  background: var(--color2);
   width: 100%;
   height: 100vw;
   margin: 0;
@@ -25,16 +25,16 @@ body {
 }
 
 .container {
-  max-width: 1020px;
+  max-width: 1200px;
   margin: 3em auto;
-  background: #fff;
-  border-radius: 2em 0 2em 0;
+  background: var(--color2);
+  border-radius: 2em 2em;
   box-shadow: 13px 15px 38px -28px rgba(0, 0, 0, 0.75);
 }
 
 .main-nav {
-  background: var(--color2);
-  border-radius: 2em 0 0 0;
+  background: var(--color1);
+  border-radius: 2em 2em 0 0;
   display: flex;
   justify-content: flex-end;
 }
@@ -42,29 +42,33 @@ body {
 .main-nav__item {
   text-decoration: none;
   padding: 1.2em;
-  color: white;
+  color: var(--color2);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .main-nav__item:hover {
-  background: var(--color1);
-  color: var(--color2);
+  background: var(--color5);
   font-weight: bold;
+  border-radius: 2em 2em;
 }
 
 header > h1 {
-  margin: 1.2em auto;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 .title {
   text-align: center;
-  font-family: "Bilbo Swash Caps", cursive;
-  font-size: 2em;
+  color: var(--color2);
+  font-family: var(--extraFont);
+  display: block;
+  background: var(--color1);
+  font-size: 3em;
 }
 
 .contact {
-  background: var(--color2);
+  background: var(--color1);
   padding-top: 0.5em;
   text-align: center;
   border-radius: 0 0 2em 0;
@@ -72,14 +76,14 @@ header > h1 {
 
 .contact > h2 {
   letter-spacing: 0.1em;
-  color: var(--color1);
+  color: var(--color2);
   padding-bottom: 0.9em;
   border-bottom: 1px solid var(--color1);
 }
 
 .contact > p {
   letter-spacing: 0.1em;
-  color: #fff;
+  color: var(--color2);
   padding-bottom: 5px;
 }
 
@@ -91,12 +95,52 @@ header > h1 {
 }
 
 .contact__item {
-  color: var(--color1);
+  color: var(--color3);
 }
 
 .contact-container__item {
   border-radius: 5px;
   text-decoration: none;
-  color: var(--color1);
+  color: var(--color2);
   font-size: 2.5em;
+}
+
+.contact-container__item:hover {
+  color: var(--color3);
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.box1 {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background: var(--color5);
+  height: 30em;
+}
+
+.box1 > h2 {
+  color: var(--color2);
+  font-family: var(--extraFont);
+  align-self: center;
+  font-size: 4em;
+}
+
+.box2 {
+  max-width: 50%;
+  background: var(--color2);
+  height: 30em;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+}
+
+.work {
+  display: flex;
+  justify-content: center;
 }
