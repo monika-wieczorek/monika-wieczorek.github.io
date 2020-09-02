@@ -21,7 +21,9 @@
   </head>
   <body>
     <div class="container">
-      <nav class="container__item main-nav">
+      <div class="hamburger-nav"><i class="fas fa-bars"></i></div>
+
+      <nav class="main-nav">
         <a href="#" class="main-nav__item">About me</a>
         <a href="#" class="main-nav__item">My skills</a>
         <a href="#" class="main-nav__item">My work</a>
@@ -33,11 +35,11 @@
       </header>
 
       <main class="container__item about">
-        <div class="about__item box1">
+        <div class="about__item box-title">
           <h2>About me</h2>
         </div>
 
-        <div class="about__item box2">
+        <div class="about__item box-content">
           <p>
             <span
               >Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -63,7 +65,7 @@
       </main>
 
       <section class="container__item skills">
-        <div class="skills__item box2">
+        <div class="skills__item box-content">
           <p>
             <span
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -78,17 +80,17 @@
             >
           </p>
         </div>
-        <div class="skills__item box1">
+        <div class="skills__item box-title">
           <h2>My skills</h2>
         </div>
       </section>
 
       <aside class="container__item work">
-        <div class="work__item box1">
+        <div class="work__item box-title">
           <h2>My work</h2>
         </div>
 
-        <div class="work__item box2">
+        <div class="work__item box-content">
           <p>
             <span
               >Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -113,7 +115,7 @@
         </div>
       </aside>
 
-      <footer class="container__item contact">
+      <footer class="contact">
         <h2>Contact me</h2>
         <p>You can contact me via:</p>
         <div class="contact-container">
@@ -144,5 +146,14 @@
         </p>
       </footer>
     </div>
+
+    <script>
+      const hamburgerButton = document.querySelector(".hamburger-nav");
+      const mainNav = document.querySelector(".main-nav");
+
+      hamburgerButton.addEventListener("click", function (event) {
+        mainNav.classList.toggle("show-nav");
+      });
+    </script>
   </body>
 </html>
