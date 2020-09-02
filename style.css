@@ -110,7 +110,7 @@ header > h1 {
 }
 
 .contact-container__item:hover {
-  color: var(--color3);
+  color: var(--color5);
 }
 
 .container__item {
@@ -120,7 +120,6 @@ header > h1 {
 
 .box-title {
   display: flex;
-  /* flex-flow: column nowrap; */
   justify-content: center;
   background: var(--color5);
   height: 30em;
