@@ -37,48 +37,41 @@
       <main class="container__item about" id="about">
         <div class="about__item box-title">
           <h2>About me</h2>
+          <nav class="sub-nav">
+            <div class="sub-nav__item">
+              <a href="#">Home</a>
+            </div>
+            <div class="sub-nav__item">
+              <a href="#skills">My Skills</a>
+              <a href="#work">My work</a>
+              <a href="#contact">Contact me</a>
+            </div>
+          </nav>
         </div>
 
         <div class="about__item box-content">
-          <p>
-            <span
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Doloribus veniam iure, nesciunt similique quo deserunt commodi
-              tempore delectus corrupti ab ea blanditiis accusantium impedit
-              consequatur mollitia, culpa dolores iusto? Accusamus.</span
-            >
-            <span
-              >Magni consectetur voluptatem dignissimos laborum enim ducimus
-              eaque eum voluptates repudiandae dolorum quidem quas, iusto
-              quisquam repellat, odio harum fugit tenetur possimus voluptatibus
-              molestiae voluptas deleniti magnam, optio dolores.
-              Molestias.</span
-            >
-            <span
-              >Consectetur blanditiis non ex, dicta corporis voluptates iusto
-              quisquam quam totam dolorum voluptate, suscipit illum eveniet modi
-              praesentium odio. Fugiat beatae iusto veniam porro ipsa similique,
-              necessitatibus ut magnam architecto.</span
-            >
+          <h3 class="box-content__item box-content--justify">Hello, my name is Monika, </br> and ... I am excited about entering my new career path.</h3>
+          <p class="box-content__item box-content--justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            veniam iure, nesciunt similique quo deserunt commodi tempore
+            delectus corrupti ab ea blanditiis accusantium impedit consequatur
+            mollitia, culpa dolores iusto? Accusamus.
+          </p>
+          <p class="box-content__item box-content--justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            veniam iure, nesciunt similique quo deserunt commodi tempore
+            delectus corrupti ab ea blanditiis accusantium impedit consequatur
+            mollitia, culpa dolores iusto? Accusamus.
           </p>
         </div>
       </main>
 
       <section class="container__item skills" id="skills">
-        <div class="skills__item box-content">
-          <p>
-            <span
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-              eaque accusantium, facere, similique iure pariatur harum incidunt
-              numquam, error inventore placeat unde? Ex optio eligendi facilis,
-              quam incidunt magni facere.</span
-            ><span
-              >Modi natus asperiores explicabo beatae rem nisi porro eveniet
-              voluptatibus eligendi aliquid minus maiores mollitia sequi
-              deserunt corporis ratione, in itaque incidunt corrupti totam odio
-              suscipit eaque impedit. Veniam, sit.</span
-            >
-          </p>
+        <div class="skills__item box-content slider">
+          <div class="active-slide">1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
         </div>
         <div class="skills__item box-title">
           <h2>My skills</h2>
@@ -91,26 +84,23 @@
         </div>
 
         <div class="work__item box-content">
-          <p>
-            <span
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Doloribus veniam iure, nesciunt similique quo deserunt commodi
-              tempore delectus corrupti ab ea blanditiis accusantium impedit
-              consequatur mollitia, culpa dolores iusto? Accusamus.</span
-            >
-            <span
-              >Magni consectetur voluptatem dignissimos laborum enim ducimus
-              eaque eum voluptates repudiandae dolorum quidem quas, iusto
-              quisquam repellat, odio harum fugit tenetur possimus voluptatibus
-              molestiae voluptas deleniti magnam, optio dolores.
-              Molestias.</span
-            >
-            <span
-              >Consectetur blanditiis non ex, dicta corporis voluptates iusto
-              quisquam quam totam dolorum voluptate, suscipit illum eveniet modi
-              praesentium odio. Fugiat beatae iusto veniam porro ipsa similique,
-              necessitatibus ut magnam architecto.</span
-            >
+          <p class="box-content__item box-content--justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            veniam iure, nesciunt similique quo deserunt commodi tempore
+            delectus corrupti ab ea blanditiis accusantium impedit consequatur
+            mollitia, culpa dolores iusto? Accusamus.
+          </p>
+          <p class="box-content__item box-content--justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            veniam iure, nesciunt similique quo deserunt commodi tempore
+            delectus corrupti ab ea blanditiis accusantium impedit consequatur
+            mollitia, culpa dolores iusto? Accusamus.
+          </p>
+          <p class="box-content__item box-content--justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            veniam iure, nesciunt similique quo deserunt commodi tempore
+            delectus corrupti ab ea blanditiis accusantium impedit consequatur
+            mollitia, culpa dolores iusto? Accusamus.
           </p>
         </div>
       </aside>
@@ -154,6 +144,23 @@
       hamburgerButton.addEventListener("click", function (event) {
         mainNav.classList.toggle("show-nav");
       });
+
+      const slider = document.querySelector(".slider");
+
+      let activeSlide = 0;
+
+      setInterval(() => {
+        if (activeSlide < slider.children.length - 1) {
+          slider.children[activeSlide].classList.remove("active-slide");
+          slider.children[activeSlide + 1].classList.add("active-slide");
+          activeSlide++;
+        } else {
+          slider.children[activeSlide].classList.remove("active-slide");
+          slider.children[0].classList.add("active-slide");
+          activeSlide = 0;
+        }
+      }, 2000);
+
     </script>
   </body>
 </html>
