@@ -68,8 +68,8 @@
 
       <section class="container__item skills" id="skills">
         <div class="skills__item box-content slider">
-          <button onclick="sliderHandler()">button</button>
-          <button>clear</button>
+          <button onclick="slideHandler()">button</button>
+          <button onclick="sliderStop()">clear</button>
           <div class="active-slide">
             <h2>HTML</h2>
           </div>
@@ -174,11 +174,11 @@
       hamburgerButton.addEventListener("click", function (event) {
         mainNav.classList.toggle("show-nav");
       });
-
-      function sliderHandler() {
+      
+      function slideHandler() {
         let activeSlide = 0;
         const slider = document.querySelector(".slider");
-        const id = setInterval(() => {
+        var id = setInterval(() => {
 
           if (activeSlide < slider.children.length - 1) {
             slider.children[activeSlide].classList.remove("active-slide");
@@ -190,9 +190,10 @@
             activeSlide = 0;
           }
         }, 1000);
-        console.log(id);
-
-        // setTimeout(10s)
+      
+        function sliderStop() {
+          clearInterval(id);
+        }
       }
     </script>
   </body>
