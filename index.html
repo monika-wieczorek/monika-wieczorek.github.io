@@ -42,7 +42,7 @@
               <a href="#">Home</a>
             </div>
             <div class="sub-nav__item">
-              <a href="#skills">My Skills</a>
+              <a href="#skills">My skills</a>
               <a href="#work">My work</a>
               <a href="#contact">Contact me</a>
             </div>
@@ -68,19 +68,49 @@
 
       <section class="container__item skills" id="skills">
         <div class="skills__item box-content slider">
-          <div class="active-slide">1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+          <button onclick="sliderHandler()">button</button>
+          <button>clear</button>
+          <div class="active-slide">
+            <h2>HTML</h2>
+          </div>
+          <div>
+            <h2>CSS</h2>
+          </div>
+          <div>
+            <h2>JS</h2>
+          </div>
+          <div>
+            <h2>React</h2>
+          </div>
         </div>
         <div class="skills__item box-title">
           <h2>My skills</h2>
+          <nav class="sub-nav">
+            <div class="sub-nav__item">
+              <a href="#">Home</a>
+            </div>
+            <div class="sub-nav__item">
+              <a href="#about">About me</a>
+              <a href="#work">My work</a>
+              <a href="#contact">Contact me</a>
+            </div>
+          </nav>
         </div>
       </section>
 
       <aside class="container__item work" id="work">
         <div class="work__item box-title">
           <h2>My work</h2>
+          <nav class="sub-nav">
+            <div class="sub-nav__item">
+              <a href="#">Home</a>
+            </div>
+            <div class="sub-nav__item">
+              <a href="#about">About me</a>              
+              <a href="#skills">My skills</a>
+              <a href="#contact">Contact me</a>
+            </div>
+          </nav>
         </div>
 
         <div class="work__item box-content">
@@ -145,22 +175,33 @@
         mainNav.classList.toggle("show-nav");
       });
 
-      const slider = document.querySelector(".slider");
+      function sliderHandler() {
+        let activeSlide = 0;
+        const slider = document.querySelector(".slider");
+        const id = setInterval(() => {
 
-      let activeSlide = 0;
+          if (activeSlide < slider.children.length - 1) {
+            slider.children[activeSlide].classList.remove("active-slide");
+            slider.children[activeSlide + 1].classList.add("active-slide");
+            activeSlide++;
+          } else {
+            slider.children[activeSlide].classList.remove("active-slide");
+            slider.children[0].classList.add("active-slide");
+            activeSlide = 0;
+          }
+        }, 1000);
+        console.log(id);
 
-      setInterval(() => {
-        if (activeSlide < slider.children.length - 1) {
-          slider.children[activeSlide].classList.remove("active-slide");
-          slider.children[activeSlide + 1].classList.add("active-slide");
-          activeSlide++;
-        } else {
-          slider.children[activeSlide].classList.remove("active-slide");
-          slider.children[0].classList.add("active-slide");
-          activeSlide = 0;
-        }
-      }, 2000);
-
+        // setTimeout(10s)
+      }
     </script>
   </body>
 </html>
+
+<!-- strzałki plus przycisk włączający automat
+click w div - zatrzymanie
+click w strzałke przeskakiwanie + zatrzymanie
+
+-->
+
+<!-- stworzyc i przypisac funkcjedo buttona -->
