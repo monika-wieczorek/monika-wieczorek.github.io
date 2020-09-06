@@ -68,8 +68,9 @@
 
       <section class="container__item skills" id="skills">
         <div class="skills__item box-content slider">
-          <button onclick="slideHandler()">button</button>
-          <button onclick="sliderStop()">clear</button>
+          <button onclick="stop()" value="stop" id="slider__btn">Stop</button>
+          <button onclick="start()" value="start" id="slider__btn">Start</button>
+
           <div class="active-slide">
             <h2>HTML</h2>
           </div>
@@ -82,6 +83,7 @@
           <div>
             <h2>React</h2>
           </div>
+
         </div>
         <div class="skills__item box-title">
           <h2>My skills</h2>
@@ -174,13 +176,14 @@
       hamburgerButton.addEventListener("click", function (event) {
         mainNav.classList.toggle("show-nav");
       });
-      
-      function slideHandler() {
+
+      var id = setInterval(start, 2000);
+
+      function start() {
         let activeSlide = 0;
         const slider = document.querySelector(".slider");
-        var id = setInterval(() => {
 
-          if (activeSlide < slider.children.length - 1) {
+        if (activeSlide < slider.children.length - 1) {
             slider.children[activeSlide].classList.remove("active-slide");
             slider.children[activeSlide + 1].classList.add("active-slide");
             activeSlide++;
@@ -189,12 +192,30 @@
             slider.children[0].classList.add("active-slide");
             activeSlide = 0;
           }
-        }, 1000);
-      
-        function sliderStop() {
-          clearInterval(id);
-        }
       }
+
+      function stop() {
+        clearInterval(id);
+      }
+
+      start();
+      
+      // function sliderButton() {
+      //   let activeSlide = 0;
+      //   const slider = document.querySelector(".slider");
+      //   var id = setInterval(() => {
+
+      //     if (activeSlide < slider.children.length - 1) {
+      //       slider.children[activeSlide].classList.remove("active-slide");
+      //       slider.children[activeSlide + 1].classList.add("active-slide");
+      //       activeSlide++;
+      //     } else {
+      //       slider.children[activeSlide].classList.remove("active-slide");
+      //       slider.children[0].classList.add("active-slide");
+      //       activeSlide = 0;
+      //     }
+      //   }, 1000);
+      // }
     </script>
   </body>
 </html>
@@ -205,4 +226,4 @@ click w strzałke przeskakiwanie + zatrzymanie
 
 -->
 
-<!-- stworzyc i przypisac funkcjedo buttona -->
+<!-- http://kursjs.pl/kurs/dom/slider.php -->
