@@ -67,9 +67,11 @@
       </main>
 
       <section class="container__item skills" id="skills">
+        
+        <button value="stop" id="slider__stop">Stop</button>
+        <button value="start" id="slider__start">Start</button>
+        
         <div class="skills__item box-content slider">
-          <button onclick="stop()" value="stop" id="slider__btn">Stop</button>
-          <button onclick="start()" value="start" id="slider__btn">Start</button>
 
           <div class="active-slide">
             <h2>HTML</h2>
@@ -177,28 +179,47 @@
         mainNav.classList.toggle("show-nav");
       });
 
-      var id = setInterval(start, 2000);
+      const sliderStop = document.querySelector("#slider__stop");
+      const sliderStart = document.querySelector("#slider__start");
 
-      function start() {
-        let activeSlide = 0;
+      sliderStop.addEventListener("click", function(event){
+        stop();
+      });
+
+      sliderStart.addEventListener("click", function(event){
+        start();
+      });
+
+      let activeSlide = 0;
+      start();
+
+      function next() {
+        console.log("start");
         const slider = document.querySelector(".slider");
 
         if (activeSlide < slider.children.length - 1) {
-            slider.children[activeSlide].classList.remove("active-slide");
-            slider.children[activeSlide + 1].classList.add("active-slide");
-            activeSlide++;
-          } else {
-            slider.children[activeSlide].classList.remove("active-slide");
-            slider.children[0].classList.add("active-slide");
-            activeSlide = 0;
-          }
+          slider.children[activeSlide].classList.remove("active-slide");
+          activeSlide++;
+          slider.children[activeSlide].classList.add("active-slide");
+        } else {
+          slider.children[activeSlide].classList.remove("active-slide");
+          activeSlide = 0;
+          slider.children[activeSlide].classList.add("active-slide");
+        }
       }
+      
+      var id;
 
+      function start() {
+      if (id!==undefined) {
+        stop();
+      }
+        id = setInterval(next, 2000);
+      }
+      
       function stop() {
         clearInterval(id);
       }
-
-      start();
       
       // function sliderButton() {
       //   let activeSlide = 0;
