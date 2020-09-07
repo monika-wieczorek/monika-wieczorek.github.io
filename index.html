@@ -72,6 +72,7 @@
       <section class="container__item skills" id="skills">
         <button value="stop" id="slider__stop">Stop</button>
         <button value="start" id="slider__start">Start</button>
+        <button id="slider__toggler">Start/Stop</button>
 
         <div class="skills__item box-content slider">
           <div class="active-slide">
@@ -181,6 +182,7 @@
 
       const sliderStop = document.querySelector("#slider__stop");
       const sliderStart = document.querySelector("#slider__start");
+      const sliderToggler = document.querySelector("#slider__toggler");
 
       sliderStop.addEventListener("click", function (event) {
         stop();
@@ -190,11 +192,18 @@
         start();
       });
 
+      sliderToggler.addEventListener("click", function (event) {
+        if (id === undefined) {
+          start();
+        } else {
+          stop();
+        }
+      });
+
       let activeSlide = 0;
       start();
 
       function next() {
-        console.log("start");
         const slider = document.querySelector(".slider");
 
         if (activeSlide < slider.children.length - 1) {
@@ -219,6 +228,7 @@
 
       function stop() {
         clearInterval(id);
+        id = undefined;
       }
 
       // function sliderButton() {
