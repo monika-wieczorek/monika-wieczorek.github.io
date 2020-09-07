@@ -50,7 +50,10 @@
         </div>
 
         <div class="about__item box-content">
-          <h3 class="box-content__item box-content--justify">Hello, my name is Monika, </br> and ... I am excited about entering my new career path.</h3>
+          <h3 class="box-content__item box-content--justify">
+            Hello, my name is Monika, <br />
+            and ... I am excited about entering my new career path.
+          </h3>
           <p class="box-content__item box-content--justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
             veniam iure, nesciunt similique quo deserunt commodi tempore
@@ -67,12 +70,10 @@
       </main>
 
       <section class="container__item skills" id="skills">
-        
         <button value="stop" id="slider__stop">Stop</button>
         <button value="start" id="slider__start">Start</button>
-        
-        <div class="skills__item box-content slider">
 
+        <div class="skills__item box-content slider">
           <div class="active-slide">
             <h2>HTML</h2>
           </div>
@@ -85,7 +86,6 @@
           <div>
             <h2>React</h2>
           </div>
-
         </div>
         <div class="skills__item box-title">
           <h2>My skills</h2>
@@ -110,7 +110,7 @@
               <a href="#">Home</a>
             </div>
             <div class="sub-nav__item">
-              <a href="#about">About me</a>              
+              <a href="#about">About me</a>
               <a href="#skills">My skills</a>
               <a href="#contact">Contact me</a>
             </div>
@@ -182,11 +182,11 @@
       const sliderStop = document.querySelector("#slider__stop");
       const sliderStart = document.querySelector("#slider__start");
 
-      sliderStop.addEventListener("click", function(event){
+      sliderStop.addEventListener("click", function (event) {
         stop();
       });
 
-      sliderStart.addEventListener("click", function(event){
+      sliderStart.addEventListener("click", function (event) {
         start();
       });
 
@@ -207,20 +207,20 @@
           slider.children[activeSlide].classList.add("active-slide");
         }
       }
-      
+
       var id;
 
       function start() {
-      if (id!==undefined) {
-        stop();
-      }
+        if (id !== undefined) {
+          stop();
+        }
         id = setInterval(next, 2000);
       }
-      
+
       function stop() {
         clearInterval(id);
       }
-      
+
       // function sliderButton() {
       //   let activeSlide = 0;
       //   const slider = document.querySelector(".slider");
