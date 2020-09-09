@@ -70,11 +70,10 @@
       </main>
 
       <section class="container__item skills" id="skills">
-        <button value="stop" id="slider__stop">Stop</button>
-        <button value="start" id="slider__start">Start</button>
-        <button id="slider__toggler">Start/Stop</button>
-
         <div class="skills__item box-content slider">
+          <button class="skills-slider__btn" id="slider__toggler">
+            Start/Stop
+          </button>
           <div class="active-slide">
             <h2>HTML</h2>
           </div>
@@ -180,17 +179,7 @@
         mainNav.classList.toggle("show-nav");
       });
 
-      const sliderStop = document.querySelector("#slider__stop");
-      const sliderStart = document.querySelector("#slider__start");
       const sliderToggler = document.querySelector("#slider__toggler");
-
-      sliderStop.addEventListener("click", function (event) {
-        stop();
-      });
-
-      sliderStart.addEventListener("click", function (event) {
-        start();
-      });
 
       sliderToggler.addEventListener("click", function (event) {
         if (id === undefined) {
@@ -200,7 +189,7 @@
         }
       });
 
-      let activeSlide = 0;
+      let activeSlide = 1;
       start();
 
       function next() {
@@ -212,7 +201,7 @@
           slider.children[activeSlide].classList.add("active-slide");
         } else {
           slider.children[activeSlide].classList.remove("active-slide");
-          activeSlide = 0;
+          activeSlide = 1;
           slider.children[activeSlide].classList.add("active-slide");
         }
       }
@@ -230,31 +219,11 @@
         clearInterval(id);
         id = undefined;
       }
-
-      // function sliderButton() {
-      //   let activeSlide = 0;
-      //   const slider = document.querySelector(".slider");
-      //   var id = setInterval(() => {
-
-      //     if (activeSlide < slider.children.length - 1) {
-      //       slider.children[activeSlide].classList.remove("active-slide");
-      //       slider.children[activeSlide + 1].classList.add("active-slide");
-      //       activeSlide++;
-      //     } else {
-      //       slider.children[activeSlide].classList.remove("active-slide");
-      //       slider.children[0].classList.add("active-slide");
-      //       activeSlide = 0;
-      //     }
-      //   }, 1000);
-      // }
     </script>
   </body>
 </html>
 
-<!-- strzałki plus przycisk włączający automat
-click w div - zatrzymanie
-click w strzałke przeskakiwanie + zatrzymanie
-
--->
+<!-- strzałki tył/przód plus kułeczka określające numery slidów
+click w div - zatrzymanie-->
 
 <!-- http://kursjs.pl/kurs/dom/slider.php -->
